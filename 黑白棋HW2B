@@ -1,0 +1,63 @@
+#include<stdio.h>
+int main() {
+    int i,j,color;
+    int chess[8][8]={};
+    for(int _a=0; _a<8 ; _a++){
+        for(int _b=0; _b<8 ; _b++){
+            scanf("%d",&chess[a][b]);
+        }
+    }
+    scanf("%d %d %d",&i,&j,&color);
+    
+    for(int _c=0;_c<8;_c++){
+        
+
+    }
+
+
+    
+    
+    
+    if(chess[j][i]==1){
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    if(chess[j][i]==0){
+        printf("這個位子沒有棋子");
+
+    }
+    if(chess[j][i]==1){
+        printf("這個位子是黑棋");
+    }
+    if(chess[j][i]==2){
+        printf("這個位子是白棋");
+    }
+    int color=chess[j][i];
+
+
+    for(int x=0;x<8;x++){
+        for(int y=0;y<8;y++){
+            
+
+        }
+    }
+}
