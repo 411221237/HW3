@@ -1,2 +1,24 @@
+<assert.h>
+出處：https://www.runoob.com/cprogramming/c-macro-assert.html
+功用：可用於驗證程式所做的假設，並在假設為假時輸出診斷訊息
+範例：
+#include < assert.h > 
+#include < stdio.h > 
+ 
+int main ( ) { 
+    int a ;
+    char str [ 50 ] ;
+     
+    printf ( "請輸入整數值：" ) ;
+    scanf ( " %d " , &a ) ;
+    assert ( a >= 10 ) ;
+    printf ( "輸入的整數是： %d \ n " , a ) ;
+    
+    printf ( "請輸入字串：" ) ;
+    scanf ( " %s " , str ) ;
+    assert ( str != NULL ) ;
+    printf ( "輸入的字串是： %s \ n " , str ) ;
+    
+    return  0  ;
 
-ㄈ
+ } 
