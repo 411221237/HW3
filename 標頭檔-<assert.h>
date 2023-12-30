@@ -13,14 +13,14 @@ int main ( ) {
     char str [ 50 ] ;
      
     printf ( "請輸入整數值：" ) ;
-    scanf ( " %d " , &a ) ;
+    scanf ( " %d " , &a ) ;//11
     assert ( a >= 10 ) ;
-    printf ( "輸入的整數是： %d \ n " , a ) ;
+    printf ( "輸入的整數是： %d \ n " , a ) ;//11
     
     printf ( "請輸入字串：" ) ;
-    scanf ( " %s " , str ) ;
+    scanf ( " %s " , str ) ;//ABC
     assert ( str != NULL ) ;
-    printf ( "輸入的字串是： %s \ n " , str ) ;
+    printf ( "輸入的字串是： %s \ n " , str ) ;//ABC
     
     return  0  ;
  } 
