@@ -12,10 +12,27 @@ int main ( )
    char str2 [ 15 ] ;
 
    strcpy ( str1 , "ABC" ) ;
-   strcpy ( str2 , "DEF" ) ;
+   strcpy ( str2 , "DE F" ) ;
 
    puts ( str1 ) ;//ABC
-   puts ( str2 ) ;//DEF
+   puts ( str2 ) ;//DE F
    
    return  0  ;
+}
+
+2.gets()
+出處：https://www.runoob.com/cprogramming/c-function-gets.html
+功用：從標準輸入stdin 讀取一行，並把它儲存在str 所指向的字串中。當讀取到換行符時，或到達文件末尾時，它會停止，具體視情況而定。
+說明：輸出字串，若沒有gets()輸入的字串讀到空格則會停止。如輸入：A BC，輸出：A
+範例：
+#include <stdio.h> 
+
+int main () { 
+   char str [ 50 ];
+   printf ( "請輸入字串：" ); //A BC
+   gets ( str );
+
+   printf ( "您輸入的字串是：%s" , str );//A BC
+
+   return  0 ;
 }
