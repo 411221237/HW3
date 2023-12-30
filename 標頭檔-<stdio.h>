@@ -1,1 +1,20 @@
+1.puts()
+功用：把一個字串寫入到標準輸出stdout，直到空字符，但不包含空字符。換行符會被追加到輸出中
+說明：輸出字串
+範例：
+#include <stdio.h>
+#include <string.h>
 
+int main ( )
+{
+   char str1 [ 15 ] ;
+   char str2 [ 15 ] ;
+
+   strcpy ( str1 , "ABC" ) ;
+   strcpy ( str2 , "DEF" ) ;
+
+   puts ( str1 ) ;//ABC
+   puts ( str2 ) ;//DEF
+   
+   return  0  ;
+}
