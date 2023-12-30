@@ -1,4 +1,5 @@
 1.puts()
+出處：https://www.runoob.com/cprogramming/c-function-puts.html
 功用：把一個字串寫入到標準輸出stdout，直到空字符，但不包含空字符。換行符會被追加到輸出中
 說明：輸出字串
 範例：
