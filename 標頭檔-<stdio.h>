@@ -54,3 +54,30 @@ int main ( )
    
    return  0  ;
 }
+
+5.rename()
+出處：https://www.runoob.com/cprogramming/c-function-rename.html
+功用：int rename(const char *old_filename, const char *new_filename)把old_filename所指向的檔案名稱改為new_filename #成功會回傳0 失敗回傳-1
+說明：更改文件名稱
+範例：
+#include <stdio.h>
+
+int main ()
+{
+   int ret;
+   char oldname[] = "file.txt";
+   char newname[] = "newfile.txt";
+   
+   ret = rename(oldname, newname);
+
+   if(ret == 0) 
+   {
+      printf("文件重命名成功");
+   }
+   else 
+   {
+      printf("错误：不能重命名该文件");
+   }
+   
+   return 0;
+}
