@@ -36,3 +36,21 @@ int main () {
 
    return  0 ;
 }
+
+3和4. scanf() printf()
+出處：
+功用：3.從標準輸入stdin 讀取格式化輸入 4.傳送格式化輸出到標準輸出stdout
+說明：輸入資料並輸出
+範例：
+#include <stdio.h>
+int main ( )
+{
+   int a=1;
+   float b=1.0;
+   char c='A';
+
+   scanf("%d %f %c",&a,&b,&c);//1 1.0 A
+   printf("%d %f %c",a,b,c);//1 1.0 A
+   
+   return  0  ;
+}
