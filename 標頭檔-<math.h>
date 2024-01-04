@@ -1,1 +1,67 @@
+1.acos(double x)
+出處：https://www.runoob.com/cprogramming/c-function-acos.html
+功用：返回以弧度表示的 x 的反餘弦 # x->[-1,1]
+說明：實際運用
+範例：
+#include <stdio.h>
+#include <math.h>
 
+#define PI 3.14159265
+
+int main ()
+{
+   double x, ret, val;
+
+   x = 0.9;
+   val = 180.0 / PI;//弧度轉角度
+
+   ret = acos(x) * val;
+   printf("%lf 的反餘弦是 %lf 度", x, ret);//0.900000 的反餘弦是 25.855040 度
+   
+   return 0;
+}
+
+1.acos(double x)
+出處：https://www.runoob.com/cprogramming/c-function-acos.html
+功用：返回以弧度表示的 x 的反餘弦 # x->[-1,1]
+說明：實際運用
+範例：
+#include <stdio.h>
+#include <math.h>
+
+#define PI 3.14159265
+
+int main ()
+{
+   double x, ret, val;
+
+   x = 0.9;
+   val = 180.0 / PI;//弧度轉角度
+
+   ret = acos(x) * val;
+   printf("%lf 的反餘弦是 %lf 度", x, ret);//0.900000 的反餘弦是 25.855040 度
+   
+   return 0;
+}
+
+2.asin(double x)
+出處：https://www.runoob.com/cprogramming/c-function-acos.html
+功用：返回以弧度表示的 x 的反正弦 # x->[-1,1]
+說明：實際運用
+範例：
+#include <stdio.h>
+#include <math.h>
+
+#define PI 3.14159265
+
+int main ()
+{
+   double x, ret, val;
+   x = 0.9;
+   val = 180.0 / PI;
+
+   ret = asin(x) * val;
+   printf("%lf 的反正弦是 %lf 度", x, ret);//0.900000 的反正弦是 64.190609 度
+   
+   return 0;
+}
