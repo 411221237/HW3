@@ -99,9 +99,9 @@ int main()
    return 0 ;//不是 不是 是
 }
 
-3.int isalnum(int c)
-出處：https://www.runoob.com/cprogramming/c-function-isalnum.html
-功用：檢查所傳的字元是否為字母和數字 若不是(false)回傳0;
+3.int isdigit(int c)
+出處：https://www.runoob.com/cprogramming/c-function-isdigit.html
+功用：檢查所傳的字元是否為十進位數字字元 若不是(false)回傳0;
 說明：輸出判斷結果
 範例：
 #include <stdio.h>
@@ -109,43 +109,25 @@ int main()
 
 int main()
 {
-   int var1 = 'd';
+   int var1 = 'h';
    int var2 = '2';
-   int var3 = '\t';
-   int var4 = ' ';
     
-   if( isalnum(var1) )
+   if( isdigit(var1) )
    {
-      printf("var1 = |%c| 是字母數字\n", var1 );
+      printf("var1 = |%c| 是一个數字\n", var1 );
    }
    else
    {
-      printf("var1 = |%c| 不是字母數字\n", var1 );
+      printf("var1 = |%c| 不是一个數字\n", var1 );
    }
-   if( isalnum(var2) )
+   if( isdigit(var2) )
    {
-      printf("var2 = |%c| 是字母數字\n", var2 );
+      printf("var2 = |%c| 是一个數字\n", var2 );
    }
    else
    {
-      printf("var2 = |%c| 不是字母數字\n", var2 );
+      printf("var2 = |%c| 不是一个數字\n", var2 );
    }
-   if( isalnum(var3) )
-   {
-      printf("var3 = |%c| 是字母數字\n", var3 );
-   }
-   else
-   {
-      printf("var3 = |%c| 不是字母數字\n", var3 );
-   }
-   if( isalnum(var4) )
-   {
-      printf("var4 = |%c| 是字母數字\n", var4 );
-   }
-   else
-   {
-      printf("var4 = |%c| 不是字母數字\n", var4 );
-   }
-    
-   return 0 ;//是 是 不是 不是
+  
+   return 0;//不是 是
 }
