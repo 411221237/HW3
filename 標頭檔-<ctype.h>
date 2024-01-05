@@ -1,1 +1,151 @@
+1.int isalnum(int c)
+出處：https://www.runoob.com/cprogramming/c-function-isalnum.html
+功用：檢查所傳的字元是否為字母和數字 若不是(false)回傳0;
+說明：輸出判斷結果
+範例：
+#include <stdio.h>
+#include <ctype.h>
 
+int main()
+{
+   int var1 = 'd';
+   int var2 = '2';
+   int var3 = '\t';
+   int var4 = ' ';
+    
+   if( isalnum(var1) )
+   {
+      printf("var1 = |%c| 是字母數字\n", var1 );
+   }
+   else
+   {
+      printf("var1 = |%c| 不是字母數字\n", var1 );
+   }
+   if( isalnum(var2) )
+   {
+      printf("var2 = |%c| 是字母數字\n", var2 );
+   }
+   else
+   {
+      printf("var2 = |%c| 不是字母數字\n", var2 );
+   }
+   if( isalnum(var3) )
+   {
+      printf("var3 = |%c| 是字母數字\n", var3 );
+   }
+   else
+   {
+      printf("var3 = |%c| 不是字母數字\n", var3 );
+   }
+   if( isalnum(var4) )
+   {
+      printf("var4 = |%c| 是字母數字\n", var4 );
+   }
+   else
+   {
+      printf("var4 = |%c| 不是字母數字\n", var4 );
+   }
+    
+   return 0 ;//是 是 不是 不是
+}
+
+2.int isspace(int c)
+出處：https://www.runoob.com/cprogramming/c-function-isspace.html
+功用：檢查所傳的字元是否為空白字符 若不是(false)回傳0;
+#標準空白字符：
+' '     (0x20)    space (SPC) 空格符
+'\t'    (0x09)    horizontal tab (TAB) 水平制表符    
+'\n'    (0x0a)    newline (LF) 換行符
+'\v'    (0x0b)    vertical tab (VT) 垂直制表符
+'\f'    (0x0c)    feed (FF) 換頁符
+'\r'    (0x0d)    carriage return (CR) 回車符
+
+說明：輸出判斷結果
+範例：
+#include <stdio.h>
+#include <ctype.h>
+
+int main()
+{
+   int var1 = 't';
+   int var2 = '1';
+   int var3 = ' ';
+
+   if( isspace(var1) )
+   {
+       printf("var1 = |%c| 是空白字符\n", var1 );
+   }
+   else
+   {
+       printf("var1 = |%c| 不是空白字符\n", var1 );
+   }
+   if( isspace(var2) )
+   {
+       printf("var2 = |%c| 是空白字符\n", var2 );
+   }
+   else
+   {
+       printf("var2 = |%c| 不是空白字符\n", var2 );
+   }
+   if( isspace(var3) )
+   {
+       printf("var3 = |%c| 是空白字符\n", var3 );
+   }
+   else
+   {
+       printf("var3 = |%c| 不是空白字符\n", var3 );
+   }
+   
+   return 0 ;//不是 不是 是
+}
+
+3.int isalnum(int c)
+出處：https://www.runoob.com/cprogramming/c-function-isalnum.html
+功用：檢查所傳的字元是否為字母和數字 若不是(false)回傳0;
+說明：輸出判斷結果
+範例：
+#include <stdio.h>
+#include <ctype.h>
+
+int main()
+{
+   int var1 = 'd';
+   int var2 = '2';
+   int var3 = '\t';
+   int var4 = ' ';
+    
+   if( isalnum(var1) )
+   {
+      printf("var1 = |%c| 是字母數字\n", var1 );
+   }
+   else
+   {
+      printf("var1 = |%c| 不是字母數字\n", var1 );
+   }
+   if( isalnum(var2) )
+   {
+      printf("var2 = |%c| 是字母數字\n", var2 );
+   }
+   else
+   {
+      printf("var2 = |%c| 不是字母數字\n", var2 );
+   }
+   if( isalnum(var3) )
+   {
+      printf("var3 = |%c| 是字母數字\n", var3 );
+   }
+   else
+   {
+      printf("var3 = |%c| 不是字母數字\n", var3 );
+   }
+   if( isalnum(var4) )
+   {
+      printf("var4 = |%c| 是字母數字\n", var4 );
+   }
+   else
+   {
+      printf("var4 = |%c| 不是字母數字\n", var4 );
+   }
+    
+   return 0 ;//是 是 不是 不是
+}
