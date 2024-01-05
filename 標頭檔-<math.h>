@@ -21,29 +21,6 @@ int main ()
    return 0;
 }
 
-1.acos(double x)
-出處：https://www.runoob.com/cprogramming/c-function-acos.html
-功用：返回以弧度表示的 x 的反餘弦 # x->[-1,1]
-說明：實際運用
-範例：
-#include <stdio.h>
-#include <math.h>
-
-#define PI 3.14159265
-
-int main ()
-{
-   double x, ret, val;
-
-   x = 0.9;
-   val = 180.0 / PI;//弧度轉角度
-
-   ret = acos(x) * val;
-   printf("%lf 的反餘弦是 %lf 度", x, ret);//0.900000 的反餘弦是 25.855040 度
-   
-   return 0;
-}
-
 2.asin(double x)
 出處：https://www.runoob.com/cprogramming/c-function-acos.html
 功用：返回以弧度表示的 x 的反正弦 # x->[-1,1]
@@ -62,6 +39,65 @@ int main ()
 
    ret = asin(x) * val;
    printf("%lf 的反正弦是 %lf 度", x, ret);//0.900000 的反正弦是 64.190609 度
+   
+   return 0;
+}
+3.atan(double x)
+出處：https://www.runoob.com/cprogramming/c-function-atan.html
+功用：返回以弧度表示的 x 的反正切 # x->[-pi/2,pi/2]
+說明：實際運用
+範例：
+#include <stdio.h>
+#include <math.h>
+
+#define PI 3.14159265
+
+int main ()
+{
+   double x, ret, val;
+
+   x = 1.0;
+   val = 180.0 / PI;//弧度轉角度
+
+   ret = atan(x) * val;
+   printf("%lf 的反正切是 %lf 度", x, ret);//1.000000 的反正切是 45.000000 度
+   
+   return 0;
+}
+
+4.fabs(double x)
+出處：https://www.runoob.com/cprogramming/c-function-fabs.html
+功用：傳回浮點數x的絕對值
+說明：實際運用
+範例：
+#include <stdio.h>
+#include <math.h>
+
+int main ( )
+{
+   int a , b ;
+   a = 1234 ;
+   b = - 344 ;
+ 
+   printf ( "%d 的絕對值是%lf \n " , a , fabs ( a ) ) ;//1234的絕對值是1234.000000
+   printf ( "%d 的絕對值是%lf \n " , b , fabs ( b ) ) ;//-344的絕對值是344.000000 
+   
+   return  0  ;
+}
+
+5.pow(double x,double y)
+出處：https://www.runoob.com/cprogramming/c-function-pow.html
+功用：傳回浮點數x的y次方
+說明：實際運用
+範例：
+#include <stdio.h>
+#include <math.h>
+
+int main ()
+{
+   printf("值 8.0 ^ 3 = %lf\n", pow(8.0, 3));//值 8.0 ^ 3 = 512.000000
+
+   printf("值 3.05 ^ 1.98 = %lf", pow(3.05, 1.98));//值 3.05 ^ 1.98 = 9.097324
    
    return 0;
 }
