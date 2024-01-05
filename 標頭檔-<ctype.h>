@@ -153,11 +153,11 @@ int main()
    }
    else
    {
-       printf("var1 = |%c| 不是标点符号字符\n", var1 );
+       printf("var1 = |%c| 不是標點符號字符\n", var1 );
    }
    if( ispunct(var2) )
    {
-       printf("var2 = |%c| 是标点符号字符\n", var2 );
+       printf("var2 = |%c| 是標點符號字符\n", var2 );
    }
    else
    {
