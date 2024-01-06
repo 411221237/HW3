@@ -1,1 +1,151 @@
+1.char * ctime ( const time_t * timer )   
+出處：https://www.runoob.com/cprogramming/c-function-ctime.html
+功用：傳回一個表示當地時間的字串，當地時間是基於參數timer。
+傳回的字串格式如下： Www Mmm dd hh:mm:ss yyyy 其中，Www表示星期幾，Mmm是以字母表示的月份，dd表示一月中的第幾天，hh:mm:ss表示時間，yyyy表示年份
+說明：實際運用
+範例：
+#include <stdio.h>
+#include <time.h>
+ 
+int main ()
+{
+   time_t curtime;
+ 
+   time(&curtime);
+ 
+   printf("當前時間 = %s", ctime(&curtime));
+   
+   return 0;//目前時間
+}
 
+2.time_t time(time_t *seconds)  
+出處：https://www.runoob.com/cprogramming/c-function-time.html
+功用：傳回自紀元Epoch（1970-01-01 00:00:00 UTC）起經過的時間，以秒為單位。如果seconds不為空，則傳回值也儲存在變數seconds中
+說明：實際運用
+範例：
+#include <stdio.h>
+#include <time.h>
+ 
+int main ()
+{
+  time_t seconds;
+ 
+  seconds = time(NULL);
+  printf("自 1970-01-01 起的小時數 = %ld\n", seconds/3600);
+  
+  return 0;//自 1970-01-01 起的小時數= ?????<-需要算
+}
+
+3.double difftime(time_t time1, time_t time2)
+出處：https://www.runoob.com/cprogramming/c-function-difftime.html
+功用：傳回time1和time2之間導出的秒數(time1 - time2)。這兩個時間是在日曆時間中指定的，表示了自紀元Epoch（協調世界時UTC ） ：1970-01-01 00:00:00）起過去的時間
+說明：實際運用
+範例：
+#include <stdio.h>
+#include <time.h>
+#ifdef _WIN32
+#include <Windows.h>
+#else
+#include <unistd.h>
+#endif
+ 
+int main ()
+{
+   time_t start_t, end_t;
+   double diff_t;
+ 
+   printf("程式啟動...\n");
+   time(&start_t);
+ 
+   printf("休眠 5 秒...\n");
+   sleep(5);
+ 
+   time(&end_t);
+   diff_t = difftime(end_t, start_t);
+ 
+   printf("執行時間 = %f\n", diff_t);
+   printf("程序退出...\n");
+ 
+   return 0;//5.000000
+}
+
+4.struct tm *gmtime(const time_t *timer)
+出處：https://www.runoob.com/cprogramming/c-function-gmtime.html
+功用：使用timer的值來填入tm結構，並以協調世界時（UTC）也稱為格林尼治標準時間（GMT）表示。
+說明：實際運用
+範例：
+struct tm {
+    int tm_sec; /* 秒，範圍從 0 到 59 */
+    int tm_min; /* 分，範圍從 0 到 59 */
+    int tm_hour; /* 小時，範圍從 0 到 23 */
+    int tm_mday; /* 一月中的第幾天，範圍從 1 到 31 */
+    int tm_mon; /* 月份，範圍從 0 到 11 */
+    int tm_year; /* 自 1900 起的年數 */
+    int tm_wday; /* 一週中的第幾天，範圍從 0 到 6 */
+    int tm_yday; /* 一年中的第幾天，範圍從 0 到 365 */
+    int tm_isdst; /* 夏令時間 */
+};
+#include <stdio.h>
+#include <time.h>
+ 
+#define BST (+1)
+#define CCT (+8)
+ 
+int main ()
+{
+ 
+   time_t rawtime;
+   struct tm *info;
+ 
+   time(&rawtime);
+   /* 獲取 GMT 時間 */
+   info = gmtime(&rawtime );
+   
+   printf("當前的世界時間：\n");
+   printf("倫敦中國：%2d:%02d\n", (info->tm_hour+BST)%24, info->tm_min);
+   printf("中國：%2d:%02d\n", (info->tm_hour+CCT)%24, info->tm_min);
+ 
+   return 0;
+}
+5.time_t mktime(struct tm *timeptr)
+出處：https://www.runoob.com/cprogramming/c-function-mktime.html
+功用：把timeptr所指向的轉換轉換為自 1970 年 1 月 1 日以來持續時間的秒數，發生錯誤時傳回-1
+說明：實際運用
+範例：
+struct tm {
+    int tm_sec; /* 秒，範圍從 0 到 59 */
+    int tm_min; /* 分，範圍從 0 到 59 */
+    int tm_hour; /* 小時，範圍從 0 到 23 */
+    int tm_mday; /* 一月中的第幾天，範圍從 1 到 31 */
+    int tm_mon; /* 月份，範圍從 0 到 11 */
+    int tm_year; /* 自 1900 起的年數 */
+    int tm_wday; /* 一週中的第幾天，範圍從 0 到 6 */
+    int tm_yday; /* 一年中的第幾天，範圍從 0 到 365 */
+    int tm_isdst; /* 夏令時間 */
+};
+#include <stdio.h>
+#include <time.h>
+
+int main () {
+    int ret;
+    struct tm info;
+    char buffer[80];
+
+    info.tm_year = 2021 - 1900;
+    info.tm_mon = 7 - 1;
+    info.tm_mday = 4;
+    info.tm_hour = 0;
+    info.tm_min = 0;
+    info.tm_sec = 1;
+    info.tm_isdst = -1;
+
+    ret = mktime(&info);
+    if( ret == -1 ) {
+        printf("Error: unable to make time using mktime\n");
+    } else {
+        strftime(buffer, sizeof(buffer), "%c", &info );
+        printf(buffer);
+    }
+
+    return 0;
+}
