@@ -1,1 +1,121 @@
+1.int memcmp(const void *str1, const void *str2, size_t n)
+出處：https://www.runoob.com/cprogramming/c-function-memcmp.html
+功用：把儲存區str1和儲存區str2的前n個位元組做比較
+#傳回值
+如果傳回值< 0，則表示str1 小於str2。
+如果傳回值> 0，則表示str1 大於str2。
+如果傳回值= 0，則表示str1 等於str2。
+說明：輸出判斷結果
+範例：
+#include <stdio.h>
+#include <string.h>
 
+int main ()
+{
+   char str1[15];
+   char str2[15];
+   int ret;
+
+   memcpy(str1, "abcdef", 6);
+   memcpy(str2, "ABCDEF", 6);
+
+   ret = memcmp(str1, str2, 5);
+
+   if(ret > 0)
+   {
+      printf("str2 小於 str1");
+   }
+   else if(ret < 0)
+   {
+      printf("str1 小於 str2");
+   }
+   else
+   {
+      printf("str1 等於 str2");
+   }
+ 
+   return 0;//str2<str1
+}
+
+2.void * memcpy ( void * str1 , const void * str2 , size_t n )   
+出處：https://www.runoob.com/cprogramming/c-function-memcpy.html
+功用：從儲存區str2複製n個位元組到儲存區str1。
+說明：輸出判斷結果
+範例：
+#include <stdio.h>
+#include <string.h>
+ 
+int main ()
+{
+   const char src[50] = "programing";
+   char dest[50];
+ 
+   memcpy(dest, src, strlen(src)+1);
+   printf("dest = %s\n", dest);//programing
+ 
+   return 0;
+}
+
+3.char *strcpy(char *dest, const char *src)
+出處：https://www.runoob.com/cprogramming/c-function-strcpy.html
+功用：把一個字串複製到零一個字串
+說明：輸出判斷結果
+範例：
+#include <stdio.h>
+#include <string.h>
+ 
+int main()
+{
+   char src[40];
+   char dest[100];
+  
+   memset(dest, '\0', sizeof(dest));
+   strcpy(src, "programing");
+   strcpy(dest, src);
+ 
+   printf("最终的目標字符串： %s\n", dest);//programing
+   
+   return 0;
+}
+
+4.size_t strlen(const char *str)
+出處：https://www.runoob.com/cprogramming/c-function-strlen.html
+功用：計算字串str的長度，直到空結束字符，但不包括空結束字元
+說明：輸出判斷結果
+範例：
+#include <stdio.h>
+#include <string.h>
+
+int main ()
+{
+   char str[50];
+   int len;
+
+   strcpy(str, "abcdef");
+
+   len = strlen(str);
+   printf("|%s| 的長度是 |%d|\n", str, len);//5
+   
+   return 0;
+}
+5.size_t strcspn(const char *str1, const char *str2)
+出處：https://www.runoob.com/cprogramming/c-function-strcspn.html
+功用：檢索字串str1開頭連續有幾個字元都不含字串str2中的字元
+說明：輸出判斷結果
+範例：
+#include <stdio.h>
+#include <string.h>
+
+
+int main ()
+{
+   int len;
+   const char str1[] = "ABCDEF4960910";
+   const char str2[] = "013";
+
+   len = strcspn(str1, str2);
+
+   printf("第一个匹配的字符是在 %d\n", len + 1);//10
+   
+   return 0;
+}
