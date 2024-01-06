@@ -1,1 +1,122 @@
+1.double atof(const char *str)
+出處：https://www.runoob.com/cprogramming/c-function-atof.html
+功用：把參數str所指向的字串轉換為一個浮點數
+說明：輸出判斷結果
+範例：
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+ 
+int main()
+{
+   float val;
+   char str[20];
+   
+   strcpy(str, "98993489");
+   val = atof(str);
+   printf("字符串值 = %s, 浮點值 = %f\n", str, val);//98993488.000000
+ 
+   strcpy(str, "aaaaaa");
+   val = atof(str);
+   printf("字符串值 = %s, 浮點值 = %f\n", str, val);//0.000000
+ 
+   return 0;
+}
 
+2.int atoi ( const char * str ) 
+出處：https://www.runoob.com/cprogramming/c-function-atoi.html
+功用：把參數str所指向的字串轉換為一個整數
+說明：輸出判斷結果
+範例：
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main()
+{
+   int val;
+   char str[20];
+   
+   strcpy(str, "98993489");
+   val = atoi(str);
+   printf("字符串值 = %s, 整型值 = %d\n", str, val);//98993489
+
+   strcpy(str, "code");
+   val = atoi(str);
+   printf("字符串值 = %s, 整型值 = %d\n", str, val);//0
+
+   return 0 ;
+}
+
+3.int atoi ( const char * str ) 
+出處：https://www.runoob.com/cprogramming/c-function-div.html
+功用：numer（分子）除以denom（分母） #函數傳回定義在 <cstdlib> 中的結構中的值，該結構有兩個成員，如 div_t: int quot; int rem；
+說明：輸出判斷結果
+範例：
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+   div_t output;
+
+   output = div(27, 4);
+   printf("(27/ 4) 的商  = %d\n", output.quot);//6
+   printf("(27/4) 的餘数 = %d\n", output.rem);//3
+
+   output = div(27, 3);
+   printf("(27/ 3) 的商 = %d\n", output.quot);//9
+   printf("(27/3) 的餘数 = %d\n", output.rem);//0
+
+   return 0;
+}
+
+4.void qsort(void *base, size_t nitems, size_t size, int (*compar)(const void *, const void*))
+出處：https://www.runoob.com/cprogramming/c-function-div.html
+功用：對數列進行排序 
+#base -- 指向要排序的佇列的第一個元素的指標。
+ nitems -- 由base所指向的備份中元素的數量。
+ size -- 備份中每個元素的大小，以位元組為單位。
+ compar -- 用來比較兩個元素的函數。
+說明：輸出判斷結果
+範例：
+#include <stdio.h>
+#include <stdlib.h>
+
+int values[] = { 88, 56, 100, 2, 25 };
+
+int cmpfunc (const void * a, const void * b)
+{
+   return ( *(int*)a - *(int*)b );
+}
+
+int main()
+{
+    qsort(values, 5, sizeof(int), cmpfunc);
+
+   printf("\n排序之后的列表：\n");
+   for( n = 0 ; n < 5; n++ ) {
+      printf("%d ", values[n]);//2 25 56 88 100
+   }
+   return 0;
+}
+
+5.void exit ( int status ) 
+出處：https://www.runoob.com/cprogramming/c-function-exit.html
+功用：立即終止呼叫程序。任何屬於該進程的開啟的檔案描述子都會關閉，該進程的子進程由進程1 繼承，初始化，且會向父進程發送SIGCHLD 訊號
+說明：輸出判斷結果
+範例：
+#include <stdio.h>
+#include <stdlib.h>
+
+int main ( )
+{
+   printf ( "開始囉 \n " ) ;
+   
+   printf ( "結束囉 \n " ) ;
+   exit ( 0 ) ;
+
+   printf ( "騙你的 \n " ) ;
+
+   return 0  ;//開始囉 結束囉
+}
