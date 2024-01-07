@@ -1,1 +1,25 @@
+此標頭檔沒有函數
+出處 1：https://zh.wikipedia.org/zh-tw/Stdint.h
+     2：https://blog.csdn.net/jinse_annian/article/details/113801830
+說明：
+#定義了一些整數型
+intN_t(具有特定位寬的整型),int_leastN_t(位寬不少於指定值的整型),int_fastN_t(位寬不少於指定值的最快速的整型) 表示長度為N位的整數
+(N可為8,16,32,64)
+uintN_t(   同上   ),uint_leastN_t(   同上   ),uint_fastN_t(   同上   ) 表示長度為N位的無符號整數
+(N可為8,16,32,64)
 
+#定義了以上各類型的最大最小值(N可為8,16,32,64)
+具有特定位寬的整型的極限：
+INTN_MIN 為 -(2N-1)
+INTN_MAX 為 2N-1 - 1
+UINTN_MAX 為 2N - 1
+
+位寬不少於指定值的整型的極限：
+INT_LEASTN_MIN 為 -(2N-1)
+INT_LEASTN_MAX 為 2N-1 - 1
+UINT_LEASTN_MAX 為 2N - 1
+
+位寬不少於指定值的最快速的整型的極限：
+NT_FASTN_MIN 為 -(2N-1)
+INT_FASTN_MAX 為 2N-1 - 1
+UINT_FASTN_MAX 為 2N - 1
